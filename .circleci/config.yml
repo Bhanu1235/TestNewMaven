@@ -1,8 +1,20 @@
 version: 2
 jobs:
-  build:
-    docker:
+		build:
+			working_directory: ~/TestNewMaven
+	
+		docker:
       - image: circleci/ruby:2.4.1
     steps:
       - checkout
-      - run: 
+	  - restore_cache:
+	  key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
+      - run: mvn dependency:go-offline
+	  - save_cache:
+	      paths:
+            - ~/.m2
+          key: circleci-demo-java-spring-{{ checksum "pom.xml" }}
+      
+      - run: mvn package
+	  - store_test_results:
+	  - store_artifacts:
