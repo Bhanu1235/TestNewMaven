@@ -1,7 +1,7 @@
 version: 2
 jobs:
 build:
-working_directory: ~/TestNewMaven
+working_directory: ~/TestNewMaven/TestPurpose/src/test/java/
 	
 docker:
       - image: circleci/ruby:2.4.1
