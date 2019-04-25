@@ -16,5 +16,5 @@ paths:
           key: TestNewMaven-{{ checksum "pom.xml" }}
       
       - run: mvn package
-	  - store_test_results:
-	  - store_artifacts:
+- store_test_results:
+- store_artifacts:
