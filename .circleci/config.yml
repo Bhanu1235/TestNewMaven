@@ -22,7 +22,7 @@ jobs:
 
     steps:
       - checkout
-        paths: ~/TestPurpose
+        paths:~/TestPurpose
         #application:TestPurpose
 
       # Download and cache dependencies
