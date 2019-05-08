@@ -22,13 +22,13 @@ jobs:
 
     steps:
       - checkout
-
+              path: ~/TestPurpose
       # Download and cache dependencies
       - restore_cache:
           keys:
             - TestNewMaven-{{ checksum "pom.xml" }}
             # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+            - TestNewMaven-
 
       - run: mvn dependency:go-offline
 
