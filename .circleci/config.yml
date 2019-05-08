@@ -22,7 +22,9 @@ jobs:
 
     steps:
       - checkout
-        path: ~/TestPurpose
+        #path: ~/TestPurpose
+        application:TestPurpose
+
       # Download and cache dependencies
       - restore_cache:
           keys:
